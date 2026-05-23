@@ -11,12 +11,13 @@ export const About = () => {
       company: 'Self-Employed',
       description:
         'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
-      icon: Code,},
+      icon: Code,
+    },
     {
       year: '2019 - 2023',
       title: 'Computer Science Graduate',
       company: 'CVR College Of Engineering',
-      description: 'Bachelor\'s degree with focus on software engineering and cloud computing.',
+      description: "Bachelor's degree with focus on software engineering and cloud computing.",
       icon: Calendar,
     },
   ];
@@ -145,15 +146,15 @@ export const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-24 bg-bg-surface/30">
+      {/* Horizontal Timeline Section */}
+      <section className="py-24 bg-bg-surface/30 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-40" // Tăng margin bottom để chừa khoảng trống cho tooltip nổi lên
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
               Career Timeline
@@ -163,86 +164,52 @@ export const About = () => {
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-primary-700 to-transparent" />
+          <div className="relative max-w-5xl mx-auto pb-16">
+            {/* Đường thẳng ngang mờ */}
+            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary-500/50 to-transparent -translate-y-1/2" />
 
-            <div className="space-y-12">
+            {/* Các Node và Tooltip */}
+            <div className="relative flex justify-around items-center z-10 w-full">
               {timeline.map((item, index) => {
                 const IconComponent = item.icon;
-                const isEven = index % 2 === 0;
                 
                 return (
                   <motion.div
                     key={item.year}
-                    initial={{ opacity: 0, x: isEven ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1, duration: 0.6 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: index * 0.2, duration: 0.5 }}
                     viewport={{ once: true }}
-                    className={`relative flex items-center ${
-                      isEven ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
+                    className="relative group flex flex-col items-center cursor-pointer"
                   >
-                    {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary-500 rounded-full flex items-center justify-center border-4 border-bg-page shadow-glow z-10">
-                      <IconComponent size={16} className="text-bg-surface" />
+                    {/* Tooltip Card (Hiển thị khi hover) */}
+                    <div className="absolute bottom-[120%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:-translate-y-2 z-20 w-72 md:w-80 pointer-events-none">
+                      <div className="bg-bg-elevated border border-primary-500/30 rounded-lg p-5 shadow-card-hover relative">
+                        {/* Mũi tên chỉ xuống của tooltip */}
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-bg-elevated border-b border-r border-primary-500/30 transform rotate-45"></div>
+                        
+                        <h3 className="font-semibold text-lg text-neutral-200 mb-1">{item.title}</h3>
+                        <div className="text-primary-500 font-medium text-sm mb-3">{item.company}</div>
+                        <p className="text-neutral-400 text-xs leading-relaxed">{item.description}</p>
+                      </div>
                     </div>
 
-                    {/* Content */}
-                    <div className={`ml-16 md:ml-0 md:w-1/2 ${isEven ? 'md:pr-12' : 'md:pl-12'}`}>
-                      <div className="bg-bg-elevated border border-neutral-700 rounded-lg p-6 hover:border-primary-500/50 transition-colors shadow-card">
-                        <div className="font-mono text-accent-500 text-sm mb-2">{item.year}</div>
-                        <h3 className="font-semibold text-xl text-neutral-200 mb-1">{item.title}</h3>
-                        <div className="text-primary-500 font-medium mb-3">{item.company}</div>
-                        <p className="text-neutral-400 text-sm leading-relaxed">{item.description}</p>
-                      </div>
+                    {/* Timeline Node tròn */}
+                    <div className="w-12 h-12 bg-bg-page rounded-full flex items-center justify-center border-2 border-primary-500 shadow-glow hover:bg-primary-500/10 transition-colors z-10 relative">
+                      <IconComponent size={20} className="text-primary-500 group-hover:text-primary-400 transition-colors" />
+                      
+                      {/* Hiệu ứng pulse tỏa ra xung quanh node */}
+                      <div className="absolute inset-0 rounded-full border border-primary-500/50 animate-ping opacity-20"></div>
+                    </div>
+
+                    {/* Nhãn năm (Luôn hiển thị bên dưới node) */}
+                    <div className="absolute top-[140%] text-center w-32 font-mono text-accent-500 text-sm font-medium mt-2">
+                      {item.year}
                     </div>
                   </motion.div>
                 );
               })}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
-              Tech Philosophy
-            </h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">
-              Core principles that guide my approach to software engineering and DevOps
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {philosophyPoints.map((point, index) => {
-              const IconComponent = point.icon;
-              return (
-                <motion.div
-                  key={point.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="bg-bg-elevated border border-neutral-700 rounded-xl p-8 text-center hover:border-primary-500/50 transition-all duration-300 group"
-                >
-                  <div className="w-16 h-16 bg-primary-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary-500/20 transition-colors">
-                    <IconComponent size={32} className="text-primary-500" />
-                  </div>
-                  <h3 className="font-semibold text-xl text-neutral-200 mb-4">{point.title}</h3>
-                  <p className="text-neutral-400 leading-relaxed">{point.description}</p>
-                </motion.div>
-              );
-            })}
           </div>
         </div>
       </section>
