@@ -23,17 +23,9 @@ export const Navbar = () => {
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-page/80 backdrop-blur-md border-b border-neutral-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 group">
-              <div className="text-primary-500 font-mono font-bold text-xl tracking-wide">
-                <span className="text-accent-500">&gt;</span>
-                <span className="group-hover:text-primary-500 transition-colors duration-200">
-                  _
-                </span>
-              </div>
-            </Link>
-
+          {}
+          <div className="flex justify-center md:justify-center items-center h-16 md:relative">
+            
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => {
@@ -76,8 +68,8 @@ export const Navbar = () => {
               })}
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
+            {}
+            <div className="md:hidden absolute right-4">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-md text-neutral-200 hover:text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
