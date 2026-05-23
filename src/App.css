@@ -32,12 +32,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0077B5; /* Đã đổi từ #00FF41 */
+  background: #00FF41;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00a0dc;
+  background: #00CC33;
 }
 
 /* Reduced Motion Support */
@@ -61,20 +61,19 @@ body {
 
 /* Selection Styling */
 ::selection {
-  background: #0077B5; /* Đã đổi từ #00FF41 */
+  background: #00FF41;
   color: #0A0E11;
 }
 
 ::-moz-selection {
-  background: #0077B5; /* Đã đổi từ #00FF41 */
+  background: #00FF41;
   color: #0A0E11;
 }
 
 /* Focus Styles */
 .focus\:ring-cyber:focus {
   outline: none;
-  /* Đã đổi #00FF41 thành #0077B5 và rgba xanh lá thành rgba(0, 119, 181, 0.3) */
-  box-shadow: 0 0 0 2px #0077B5, 0 0 16px rgba(0, 119, 181, 0.3);
+  box-shadow: 0 0 0 2px #00FF41, 0 0 16px rgba(0, 255, 65, 0.3);
 }
 
 /* Terminal Cursor */
@@ -82,7 +81,7 @@ body {
   display: inline-block;
   width: 2px;
   height: 1.2em;
-  background-color: #0077B5; /* Đã đổi từ #00FF41 */
+  background-color: #00FF41;
   animation: blink 1s infinite;
 }
 
@@ -101,7 +100,7 @@ body {
 /* Glitch Effect */
 .glitch {
   position: relative;
-  color: #0077B5; /* Đã đổi từ #00FF41 */
+  color: #00FF41;
 }
 
 .glitch::before,
