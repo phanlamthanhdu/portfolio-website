@@ -7,13 +7,11 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  // Đã loại bỏ Blog và Case Studies
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
-    // { path: '/contact', label: 'Contact' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -31,7 +29,8 @@ export const Navbar = () => {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className="relative px-3 py-2 text-sm font-medium transition-all duration-200 group flex items-center gap-2"
+                    // ĐÃ ĐỔI: tăng kích thước từ text-sm lên text-base (hoặc text-lg nếu muốn to nữa)
+                    className="relative px-3 py-2 text-base font-semibold transition-all duration-200 group flex items-center gap-2"
                   >
                     <span
                       className={`font-mono ${
@@ -84,17 +83,17 @@ export const Navbar = () => {
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center justify-between px-3 py-3 rounded-md text-base font-medium transition-all duration-200 ${
+                    // ĐÃ ĐỔI: tăng kích thước menu mobile từ text-base lên text-lg
+                    className={`flex items-center justify-between px-4 py-3 rounded-md text-lg font-semibold transition-all duration-200 ${
                       isActive(item.path)
                         ? 'text-primary-500 bg-bg-surface border-l-2 border-primary-500'
                         : 'text-neutral-200 hover:text-primary-500 hover:bg-bg-surface'
                     }`}
                   >
-                    {/* Hiển thị lại label cho menu mobile vì bản cũ đang bị thiếu */}
                     <span className="font-mono">{item.label}</span>
                     
                     <ChevronRight
-                      size={16}
+                      size={18} // Tăng nhẹ size icon mũi tên cho cân xứng với chữ
                       className={`transition-transform ${
                         isActive(item.path) ? 'text-primary-500' : ''
                       }`}
