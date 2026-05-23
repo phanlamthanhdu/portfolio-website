@@ -9,7 +9,6 @@ export const About = () => {
       year: '2019 - 2023',
       title: 'Computer Science Graduate',
       company: 'CVR College Of Engineering',
-      // Chuyển description thành Array để chứa nhiều dòng
       description: [
         "1. Bachelor's degree with focus on software engineering and cloud computing.",
         "2. Core subjects included Data Structures, Algorithms, and Operating Systems.",
@@ -201,17 +200,20 @@ export const About = () => {
                     viewport={{ once: true }}
                     className="relative group flex flex-col items-center cursor-pointer"
                   >
-                    {/* Tooltip Card (Hiển thị khi hover) */}
-                    <div className="absolute bottom-[120%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:-translate-y-2 z-20 w-72 md:w-80 pointer-events-none">
+                    {/* Tooltip Card - Đã tăng width từ w-72 md:w-80 thành w-80 md:w-96 để fit chữ to */}
+                    <div className="absolute bottom-[120%] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:-translate-y-2 z-20 w-80 md:w-96 pointer-events-none">
                       <div className="bg-bg-elevated border border-primary-500/30 rounded-lg p-5 shadow-card-hover relative">
                         {/* Mũi tên chỉ xuống của tooltip */}
                         <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-bg-elevated border-b border-r border-primary-500/30 transform rotate-45"></div>
                         
-                        <h3 className="font-semibold text-lg text-neutral-200 mb-1">{item.title}</h3>
-                        <div className="text-primary-500 font-medium text-sm mb-3">{item.company}</div>
+                        {/* Tăng kích thước tiêu đề: text-lg -> text-xl */}
+                        <h3 className="font-semibold text-xl text-neutral-200 mb-1">{item.title}</h3>
                         
-                        {/* Render Description dạng mảng với space-y-1.5 để tạo khoảng cách giữa các dòng */}
-                        <div className="text-neutral-400 text-xs leading-relaxed space-y-1.5">
+                        {/* Tăng kích thước tên công ty: text-sm -> text-base */}
+                        <div className="text-primary-500 font-medium text-base mb-3">{item.company}</div>
+                        
+                        {/* Tăng kích thước nội dung: text-xs -> text-sm và giãn dòng rộng hơn một chút (space-y-2) */}
+                        <div className="text-neutral-400 text-sm leading-relaxed space-y-2">
                           {item.description.map((descLine, i) => (
                             <p key={i}>{descLine}</p>
                           ))}
