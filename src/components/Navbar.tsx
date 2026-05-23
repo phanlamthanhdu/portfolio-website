@@ -12,8 +12,8 @@ export const Navbar = () => {
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
-    { path: '/blog', label: 'Blog', icon: BookOpen },
-    { path: '/case-studies', label: 'Case Studies', icon: FileText },
+    // { path: '/blog', label: 'Blog', icon: BookOpen },
+    // { path: '/case-studies', label: 'Case Studies', icon: FileText },
     { path: '/contact', label: 'Contact' },
   ];
 
