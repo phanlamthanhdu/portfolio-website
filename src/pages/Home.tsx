@@ -174,44 +174,6 @@ export const Home = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-24 relative z-10 bg-gradient-to-b from-transparent to-bg-elevated/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="bg-bg-elevated border border-primary-500/20 p-12 rounded-2xl shadow-glow"
-          >
-            <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-6">
-              Ready to Deploy Your Vision?
-            </h2>
-            <p className="text-xl text-neutral-200 mb-8 leading-relaxed">
-              Let's build something amazing together. From infrastructure automation to full-stack development, 
-              I'm here to turn your ideas into production reality.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-surface font-semibold rounded-lg hover:bg-primary-700 transition-all duration-200 shadow-glow hover:shadow-card-hover"
-              >
-                Start a Project
-              </Link>
-              <a
-                href="https://github.com/neerajnakka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-200 hover:border-primary-500 hover:text-primary-500 font-semibold rounded-lg transition-all duration-200"
-              >
-                <Github className="mr-2 h-5 w-5" />
-                View Code
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
