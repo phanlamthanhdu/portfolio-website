@@ -6,19 +6,26 @@ import { Calendar, MapPin, Code, Zap } from 'lucide-react';
 export const About = () => {
   const timeline = [
     {
-      year: '2023 - Present',
-      title: 'Freelance DevOps & Cloud Engineer',
-      company: 'Self-Employed',
-      description:
-        'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
-      icon: Code,
-    },
-    {
       year: '2019 - 2023',
       title: 'Computer Science Graduate',
       company: 'CVR College Of Engineering',
       description: "Bachelor's degree with focus on software engineering and cloud computing.",
       icon: Calendar,
+    },
+    {
+      year: '2022 - 2023',
+      title: 'Full-Stack Developer',
+      company: 'Tech Agency',
+      description: 'Built scalable web applications using Java, React, and Node.js. Started transitioning towards infrastructure.',
+      icon: Code,
+    },
+    {
+      year: '2023 - Present',
+      title: 'Freelance DevOps & Cloud Engineer',
+      company: 'Self-Employed',
+      description:
+        'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
+      icon: Zap,
     },
   ];
 
@@ -169,7 +176,7 @@ export const About = () => {
             <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary-500/50 to-transparent -translate-y-1/2" />
 
             {/* Các Node và Tooltip */}
-            <div className="relative flex justify-around items-center z-10 w-full">
+            <div className="relative flex justify-between items-center z-10 w-full px-8">
               {timeline.map((item, index) => {
                 const IconComponent = item.icon;
                 
