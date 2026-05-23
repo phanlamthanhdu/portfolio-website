@@ -9,22 +9,34 @@ export const About = () => {
       year: '2019 - 2023',
       title: 'Computer Science Graduate',
       company: 'CVR College Of Engineering',
-      description: "Bachelor's degree with focus on software engineering and cloud computing.",
+      // Chuyển description thành Array để chứa nhiều dòng
+      description: [
+        "1. Bachelor's degree with focus on software engineering and cloud computing.",
+        "2. Core subjects included Data Structures, Algorithms, and Operating Systems.",
+        "3. Completed multiple hands-on projects related to distributed systems."
+      ],
       icon: Calendar,
     },
     {
       year: '2022 - 2023',
       title: 'Full-Stack Developer',
       company: 'Tech Agency',
-      description: 'Built scalable web applications using Java, React, and Node.js. Started transitioning towards infrastructure.',
+      description: [
+        "1. Built scalable web applications using Java, React, and Node.js.",
+        "2. Collaborated with cross-functional teams to deliver client projects.",
+        "3. Started transitioning towards infrastructure and deployment pipelines."
+      ],
       icon: Code,
     },
     {
       year: '2023 - Present',
       title: 'Freelance DevOps & Cloud Engineer',
       company: 'Self-Employed',
-      description:
-        'Working on freelance projects focusing on cloud automation, CI/CD, and container orchestration using AWS, Docker, and Kubernetes.',
+      description: [
+        "1. Working on freelance projects focusing on cloud automation and CI/CD.",
+        "2. Managing container orchestration using AWS, Docker, and Kubernetes.",
+        "3. Implementing Infrastructure as Code (IaC) with Terraform."
+      ],
       icon: Zap,
     },
   ];
@@ -161,7 +173,7 @@ export const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-40" // Tăng margin bottom để chừa khoảng trống cho tooltip nổi lên
+            className="text-center mb-40" 
           >
             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
               Career Timeline
@@ -197,7 +209,14 @@ export const About = () => {
                         
                         <h3 className="font-semibold text-lg text-neutral-200 mb-1">{item.title}</h3>
                         <div className="text-primary-500 font-medium text-sm mb-3">{item.company}</div>
-                        <p className="text-neutral-400 text-xs leading-relaxed">{item.description}</p>
+                        
+                        {/* Render Description dạng mảng với space-y-1.5 để tạo khoảng cách giữa các dòng */}
+                        <div className="text-neutral-400 text-xs leading-relaxed space-y-1.5">
+                          {item.description.map((descLine, i) => (
+                            <p key={i}>{descLine}</p>
+                          ))}
+                        </div>
+
                       </div>
                     </div>
 
