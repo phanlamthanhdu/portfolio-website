@@ -79,12 +79,10 @@ body {
 /* Terminal Cursor (Con trỏ Khối Vuông Hacker - ĐÃ SỬA) */
 .terminal-cursor {
   display: inline-block;
-  width: 0.25em; /* Cục vuông to bằng chữ */
-  height: 1.1em;
+  width: 0.25em;
+  height: 0.85em; /* Chỉnh chiều cao vừa bằng chữ in hoa */
   background-color: #0077B5;
-  vertical-align: baseline;
-  transform: translateY(0.1em);
-  /* step-end giúp chớp tắt dứt khoát không bị mờ */
+  /* Đã xóa transform translateY để nó không bị thò xuống dưới */
   animation: cursor-blink 1s step-end infinite; 
 }
 
