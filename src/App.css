@@ -32,12 +32,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00FF41;
+  background: #0077B5; /* Xanh LinkedIn */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00CC33;
+  background: #025f92; /* Xanh LinkedIn đậm hơn khi hover */
 }
 
 /* Reduced Motion Support */
@@ -59,30 +59,39 @@ body {
   }
 }
 
-/* Selection Styling */
+/* Selection Styling (Màu khi bôi đen text) */
 ::selection {
-  background: #00FF41;
+  background: #0077B5;
   color: #0A0E11;
 }
 
 ::-moz-selection {
-  background: #00FF41;
+  background: #0077B5;
   color: #0A0E11;
 }
 
-/* Focus Styles */
+/* Focus Styles (Viền sáng khi bấm Tab vào các phần tử) */
 .focus\:ring-cyber:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #00FF41, 0 0 16px rgba(0, 255, 65, 0.3);
+  box-shadow: 0 0 0 2px #0077B5, 0 0 16px rgba(0, 119, 181, 0.3);
 }
 
-/* Terminal Cursor */
+/* Terminal Cursor (Con trỏ Khối Vuông Hacker - ĐÃ SỬA) */
 .terminal-cursor {
   display: inline-block;
-  width: 2px;
-  height: 1.2em;
-  background-color: #00FF41;
-  animation: blink 1s infinite;
+  width: 0.55em; /* Cục vuông to bằng chữ */
+  height: 1.1em;
+  background-color: #0077B5;
+  vertical-align: baseline;
+  transform: translateY(0.1em);
+  /* step-end giúp chớp tắt dứt khoát không bị mờ */
+  animation: cursor-blink 1s step-end infinite; 
+}
+
+/* Hiệu ứng chớp tắt thật của Terminal */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Matrix Code Rain Effect */
@@ -100,7 +109,7 @@ body {
 /* Glitch Effect */
 .glitch {
   position: relative;
-  color: #00FF41;
+  color: #0077B5; 
 }
 
 .glitch::before,
@@ -115,13 +124,13 @@ body {
 
 .glitch::before {
   animation: glitch-1 0.5s infinite;
-  color: #FF4757;
+  color: #FF4757; /* Giữ nguyên đỏ làm bóng nhiễu */
   z-index: -1;
 }
 
 .glitch::after {
   animation: glitch-2 0.5s infinite;
-  color: #00D9FF;
+  color: #00D9FF; /* Giữ nguyên lơ làm bóng nhiễu */
   z-index: -2;
 }
 
@@ -156,11 +165,4 @@ body {
 /* Floating Particles Animation */
 @keyframes float {
   0%, 100% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-    opacity: 0.8;
-  }
-}
+    transform
