@@ -7,7 +7,7 @@ import { Skills } from './pages/Skills';
 import { Projects } from './pages/Projects';
 import Blog from './pages/Blog';
 import CaseStudies from './pages/CaseStudies';
-import { Contact } from './pages/Contact';
+import { CLI } from './pages/CLI';
 import './App.css';
 
 function App() {

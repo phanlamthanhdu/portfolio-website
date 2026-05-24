@@ -12,6 +12,7 @@ export const Navbar = () => {
     { path: '/about', label: 'About' },
     { path: '/skills', label: 'Skills' },
     { path: '/projects', label: 'Projects' },
+    { path: '/cli', label: 'CLI' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
