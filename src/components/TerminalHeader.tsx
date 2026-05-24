@@ -25,7 +25,8 @@ export const TerminalHeader = ({ command, description }: TerminalHeaderProps) =>
           <div className="font-mono text-2xl lg:text-3xl font-bold tracking-tight flex items-baseline whitespace-nowrap">
             <span className="text-accent-500 mr-3 shrink-0">$</span>
             <Typewriter text={command} delay={30} />
-            <span className="terminal-cursor ml-1 sm:ml-2 shrink-0" />
+            {/* Thêm translate-y-[2px] vào đây để đẩy nó xuống */}
+            <span className="terminal-cursor ml-1 sm:ml-2 shrink-0 translate-y-[2px]" />
           </div>
           
           {/* Description */}
