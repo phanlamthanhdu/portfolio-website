@@ -248,7 +248,7 @@ export const CLI = () => {
                     disabled={isProcessing}
                   />
                   {!isProcessing && (
-                    <div className="w-2 h-5 bg-primary-500 animate-pulse ml-1" />
+                    <span className="terminal-cursor ml-1 sm:ml-2 shrink-0 translate-y-[2px]" />
                   )}
                 </div>
               </div>
