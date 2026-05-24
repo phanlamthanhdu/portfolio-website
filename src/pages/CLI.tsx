@@ -5,7 +5,7 @@ import { Typewriter } from '../components/Typewriter';
 import { Cloud, Container, Code, Database, Terminal as TerminalIcon } from 'lucide-react';
 import { SKILLS_BY_CATEGORY } from '../data/portfolio';
 
-export const Skills = () => {
+export const CLI = () => {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
   const [currentInput, setCurrentInput] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
