@@ -204,10 +204,6 @@ export const CLI = () => {
                       delay={30}
                       className="block"
                     />
-                    <div className="mt-4">
-                      <span className="text-accent-500">$</span>
-                      <span className="text-neutral-400 ml-2">ready for input...</span>
-                    </div>
                   </div>
                 )}
 
@@ -244,12 +240,10 @@ export const CLI = () => {
                     onChange={(e) => setCurrentInput(e.target.value)}
                     onKeyPress={handleKeyPress}
                     className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono"
-                    placeholder={isProcessing ? "processing..." : "enter command..."}
+                    placeholder={isProcessing ? " " : ""}
                     disabled={isProcessing}
                   />
-                  {!isProcessing && (
-                    <span className="terminal-cursor ml-1 sm:ml-2 shrink-0 translate-y-[2px]" />
-                  )}
+                  <span className="terminal-cursor ml-1 sm:ml-2 shrink-0 translate-y-[2px]" />
                 </div>
               </div>
             </div>
