@@ -21,13 +21,20 @@ module.exports = {
         sans: ['Inter', '-apple-system', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // ĐÃ SỬA: Đổi từ xanh lá sang dải màu xanh LinkedIn
         primary: {
-          50: '#E6FFF0',
-          100: '#B3FFD9',
-          500: '#00FF41',
-          700: '#00CC33',
-          900: '#008F26',
-          DEFAULT: '#00FF41',
+          50: '#f0f8fb',
+          100: '#dceef6',
+          200: '#bae1ef',
+          300: '#89cbe3',
+          400: '#52abd4',
+          500: '#0077B5', // Màu chính
+          600: '#025f92',
+          700: '#034c76',
+          800: '#054061',
+          900: '#093551',
+          950: '#062236',
+          DEFAULT: '#0077B5', // Màu mặc định
         },
         accent: {
           500: '#FFB800',
@@ -73,11 +80,12 @@ module.exports = {
         DEFAULT: '8px',
       },
       boxShadow: {
-        sm: '0 1px 2px rgba(0, 255, 65, 0.05)',
+        // ĐÃ SỬA: Đổi rgba của bóng đổ (shadow) sang rgba của #0077B5 (0, 119, 181)
+        sm: '0 1px 2px rgba(0, 119, 181, 0.05)',
         card: '0 4px 16px rgba(0, 0, 0, 0.4)',
         'card-hover': '0 8px 32px rgba(0, 0, 0, 0.5)',
         modal: '0 24px 48px rgba(0, 0, 0, 0.7)',
-        glow: '0 0 16px rgba(0, 255, 65, 0.3)',
+        glow: '0 0 16px rgba(0, 119, 181, 0.3)',
       },
       keyframes: {
         'typewriter': {
