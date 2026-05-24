@@ -165,4 +165,11 @@ body {
 /* Floating Particles Animation */
 @keyframes float {
   0%, 100% {
-    transform
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.8;
+  }
+}
