@@ -22,10 +22,10 @@ export const TerminalHeader = ({ command, description }: TerminalHeaderProps) =>
           className="space-y-4"
         >
           {/* Command */}
-          <div className="font-mono text-2xl lg:text-3xl">
-            <span className="text-accent-500 mr-3">$</span>
+          <div className="font-mono text-2xl lg:text-3xl flex items-baseline">
+            <span className="text-accent-500 mr-3 shrink-0">$</span>
             <Typewriter text={command} delay={30} />
-            <span className="terminal-cursor ml-1" />
+            <span className="terminal-cursor ml-1 sm:ml-2 shrink-0" />
           </div>
           
           {/* Description */}

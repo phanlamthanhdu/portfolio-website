@@ -79,8 +79,8 @@ body {
 /* Terminal Cursor (Con trỏ Khối Vuông Hacker - ĐÃ SỬA) */
 .terminal-cursor {
   display: inline-block;
-  width: 0.25em;
-  height: 0.85em; /* Chỉnh chiều cao vừa bằng chữ in hoa */
+  width: 0.15em;
+  height: 0.95em; 
   background-color: #0077B5;
   /* Đã xóa transform translateY để nó không bị thò xuống dưới */
   animation: cursor-blink 1s step-end infinite; 
