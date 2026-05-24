@@ -243,7 +243,6 @@ export const CLI = () => {
                     placeholder={isProcessing ? " " : ""}
                     disabled={isProcessing}
                   />
-                  <span className="terminal-cursor ml-1 sm:ml-2 shrink-0 translate-y-[2px]" />
                 </div>
               </div>
             </div>

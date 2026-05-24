@@ -36,11 +36,11 @@ export const Home = () => {
             </div>
 
             {/* Typewriter heading */}
-            <div className="font-mono text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-primary-500 flex items-baseline justify-center whitespace-nowrap">
+            <div className="font-mono text-xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-primary-500 flex items-baseline justify-center whitespace-nowrap">
               <Typewriter text="DevOps & Cloud Engineer" delay={80} />
               <span className="terminal-cursor ml-1 sm:ml-2 shrink-0" />
             </div>
-
+            
             {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0 }}
